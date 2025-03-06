@@ -1,0 +1,30 @@
+<div class="portfolio" id="portfolio">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>Portfolio</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul id="portfolio-flters">
+          <li (click)="onSelection(portfolio)" [ngClass]="{'filter-active': portfolio === selected}"
+            *ngFor="let portfolio of portfolioData.categories"> {{ portfolio }} </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row portfolio-container">
+      <div *ngFor="let item of tileData" class="col-lg-4 col-md-6 portfolio-item web-des">
+        <div class="portfolio-wrap">
+          <figure>
+            <img [src]="item.image" class="img-fluid" [alt]="item.alt">
+            <a href="#" class="link-preview"><i class="fa fa-eye"></i></a>
+            <a href="#" class="link-details" title="More Details"><i class="fa fa-link"></i></a>
+            <a class="portfolio-title" href="#"> {{item.type }} <span> {{item.projname }}</span></a>
+          </figure>
+        </div>
+      </div>
+      <div *ngIf="tileData.length === 0">
+        <h3> No items found </h3>
+      </div>
+    </div>
+  </div>
+</div>

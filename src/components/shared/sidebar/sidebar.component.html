@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <img [src]="user.imageUrl" [alt]="user.alt">
+  </div>
+  <div class="sidebar-content">
+    <app-sidenav [navLinks]="sideBarData.navLinks"></app-sidenav>
+  </div>
+  <div class="sidebar-footer">
+    <ng-container *ngFor="let item of socialMedia">
+      <a [href]="item.url"><i [ngClass]="item.fontClass" class="fab"></i></a>
+    </ng-container>
+  </div>
+</div>

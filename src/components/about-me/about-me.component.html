@@ -1,0 +1,33 @@
+<div class="about" id="about">
+  <div class="content-inner">
+    <div class="content-header">
+      <h2>About Me</h2>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-6 col-lg-5">
+        <img [src]="aboutData.imageUrl" [alt]="aboutData.alt">
+      </div>
+      <div class="col-md-6 col-lg-7">
+        <p>
+          {{ aboutData.desc }}
+        </p>
+        <a class="btn" href="#">Hire Me</a>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let skill of aboutData.skills" class="col-md-6">
+        <div class="skills">
+          <div class="skill-name">
+            <p> {{ skill.name }} </p>
+            <p>{{ skill.percent }}%</p>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" [style.width.%]="skill.percent" aria-valuemin=" 0"
+              aria-valuemax="100">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

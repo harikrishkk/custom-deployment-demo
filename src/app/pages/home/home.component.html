@@ -1,0 +1,20 @@
+<div *ngIf="resumeData$ | async as resumeData; else loading" class="wrapper">
+  <app-sidebar [sideBarData]="resumeData.sideBarData"></app-sidebar>
+  <div class="content">
+    <app-banner [bannerData]="resumeData.bannerData"></app-banner>
+    <app-about-me [aboutData]="resumeData.aboutData"></app-about-me>
+    <app-education [educationData]="resumeData.educationData"></app-education>
+    <app-experience [experienceData]="resumeData.experienceData"></app-experience>
+    <app-professional-services [serviceData]="resumeData.serviceData"></app-professional-services>
+    <app-portfolio [portfolioData]="resumeData.portfolioData"></app-portfolio>
+    <app-review [reviewData]="resumeData.reviewData"></app-review>
+    <app-contact-me [contactData]="resumeData.contactData"></app-contact-me>
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+</ng-template>
